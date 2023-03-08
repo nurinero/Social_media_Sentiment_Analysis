@@ -13,7 +13,7 @@ The data pipeline involves 5 steps:
 **4 Load tweets and corresponding sentiment assessment in a PostgresDB**: The tweets and their corresponding sentiment assessment are loaded into a PostgresDB.
 
 **5. Post data in a Slack channel with a Slack bot**: The data is extracted from the PostgresDB and posted in a Slack channel using a Slack bot.
-
+![Projectpipeline](Project_pipeline.jpeg)
 ##  Technology Stack
 The project uses the following technology stack:
 
