@@ -1,0 +1,68 @@
+# It is very important to specify the version of the yml file
+version: '3'
+
+# Here on we specify the services that compose out pipeline
+# each service represents a container
+services:
+
+    tweet_collector:
+      build: ./tweet_coll/.
+      volumes:
+      - ./tweet_coll/:/app
+      # To persist the data from/to a container we can add vovlumes
+
+     # container_name: luftcontaine
+      depends_on:
+       - mongodb
+      env_file:
+       - .env
+      
+
+    
+    mongodb:
+      image: mongo:latest
+      container_name: mongo_container_new
+      ports:
+      - 27017:27017 
+      env_file:
+      - .env
+      #Mapping the port 5555 from my local host to the 5432 of the container
+      
+      
+    postgresdb:
+      image: postgres
+      ports:
+      - 5555:5432
+      env_file:
+      - .env
+    
+    etl:
+      build: ./etl_job/.
+      volumes:
+      - ./etl_job/:/app
+      depends_on:
+       - mongodb
+       - postgresdb
+      env_file:
+       - .env
+    
+    slackbot:
+      image: slackbot
+      container_name: mybot
+      build: Slack_Bot/
+      volumes:
+        - ./Slack_Bot/:/app
+      depends_on:
+        - postgresdb
+      env_file:
+        - .env 
+    
+#    metabase:
+#      image: metabase
+#      container_name: Matecontainer
+#      ports:
+#        - 3000:3000
+#      depends_on:
+#        - postgresdb
+#      env_file:
+#        - .env  
