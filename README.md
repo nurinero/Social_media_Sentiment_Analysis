@@ -26,7 +26,7 @@ The project uses the following technology stack:
 * Natural Language Processing (NLP) and Machine Learning (ML) for sentiment analysis.\
 * VADER lexicon rule-based sentiment analysis tool.
 * Slack API for posting data in a Slack channel.
-
+![Sentiment Analysis with VADER.gif](Sentiment_Analysis_VADER.gif)
 ## Setup
 To run the project, follow these steps:
 1. Clone the repository: git clone https://github.com/nurinero/Social_media_Sentiment_Analysis.git
@@ -34,7 +34,7 @@ To run the project, follow these steps:
 3. Setup the credentials for Tweepy API, MongoDB, PostgresDB, and Slack API.
 4. Run the project inside the docker contetner.
 
-![Sentiment Analysis with VADER.gif](Sentiment_Analysis_VADER.gif)
+
 ## Conclusion
 This project shows how to collect customer social media posts using Twitter API, perform sentiment analysis on the tweets using NLP and ML, and store the data in databases. It also demonstrates how to post the data in a Slack channel using a Slack bot.
 ## License
