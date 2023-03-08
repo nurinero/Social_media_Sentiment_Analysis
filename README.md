@@ -26,7 +26,7 @@ The project uses the following technology stack:
 ## Setup
 To run the project, follow these steps:
 
-1. Clone the repository: git clone https://github.com/your-username/social-media-sentiment-analysis.git
+1. Clone the repository: git clone https://github.com/nurinero/Social_media_Sentiment_Analysis.git
 
 2. Install the required packages: pip install -r requirements.txt
 
